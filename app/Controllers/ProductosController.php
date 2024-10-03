@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 use App\Controllers\BaseController;
+use App\Models\ProductoModel;
 use CodeIgniter\HTTP\ResponseInterface;
 
 class ProductosController extends BaseController
@@ -13,5 +14,13 @@ class ProductosController extends BaseController
         //return json_encode($test);
 
         return response()->setJSON(['mensaje' => 'Mi primer Controlador en CodeIgniter 4'], 200);
+    }
+
+    public function getProducts()
+    {
+        $data = new ProductoModel();
+        $data = $data->findAll();
+
+        return response()->setJSON($data, 200);
     }
 }

@@ -8,3 +8,4 @@ use CodeIgniter\Router\RouteCollection;
 $routes->get('/', 'Home::index');
 
 $routes->get('mensaje', 'ProductosController::mensaje');
+$routes->get('products', 'ProductosController::getProducts');
